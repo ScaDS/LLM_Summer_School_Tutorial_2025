@@ -1,0 +1,42 @@
+name: scads-llm
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11 
+  - jupyterlab 
+  - pytorch 
+  - torchvision 
+  - torchaudio 
+  - huggingface_hub 
+  - diffusers 
+  - transformers 
+  - accelerate 
+  - openai 
+  - langchain 
+  - stackview 
+  - voila 
+  - pandas 
+  - torchmetrics 
+  - scikit-learn 
+  - seaborn
+  - pip
+  - pip:
+      - python-pptx 
+      - bia-bob 
+      - llama-index 
+      - pygithub
+      - bitsandbytes>=0.43.2
+      - peft
+      - trl
+      - pooch
+      - llama-index-llms-ollama
+      - llama-index-llms-openai-like
+      - llama-index-embeddings-huggingface
+      - tokenizers==0.21.0
+      - pypdf
+      - smolagents==1.10.0
+      - tqdm 
+prefix: C:\Users\haase\miniconda3\envs\scads-llm

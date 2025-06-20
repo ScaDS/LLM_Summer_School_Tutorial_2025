@@ -1,0 +1,57 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+
+parts:
+  - caption: Setup
+    chapters:
+    - file: 00_setup/readme.md
+    
+  - caption: LLM basics
+    chapters:
+    
+    - file: 15_endpoint_apis/01_scadsai_llm_endpoint.ipynb
+    - file: 15_endpoint_apis/02_ollama_endpoint.ipynb
+    - file: 15_endpoint_apis/06_kisski_endpoint.ipynb
+    - file: 15_endpoint_apis/03_blablador_endpoint.ipynb
+    - file: 15_endpoint_apis/05_github_models_endpoints.ipynb
+    - file: 15_endpoint_apis/07_openrouter_endpoint.ipynb
+
+    - file: 20_chatbots/readme.md
+      sections:
+      - file: 20_chatbots/gui.ipynb
+
+  - caption: Generating Code and Data
+    chapters:
+    - file: 25_code_generation/bia-bob_demo.ipynb
+    - file: 25_code_generation/generating_guis.ipynb
+
+    - file: 25_code_generation/generate_notebooks_reflection.ipynb
+
+    - file: 27_generating_data/synthetic_customer_data_llms.ipynb
+    - file: 27_generating_data/synthetic_customer_data_rnd_generators.ipynb
+
+  - caption: Retrieval Augmented Generation (RAG)
+    chapters:
+    - file: 33_chat_with_docs/text-embeddings.ipynb
+    - file: 33_chat_with_docs/chat-with-docs.ipynb
+    - file: 33_chat_with_docs/hpc-compendium-prepare-data.ipynb
+    - file: 33_chat_with_docs/long-context-prompting.ipynb
+    - file: 33_chat_with_docs/chat-with-hpc-compendium.ipynb
+    - file: 33_chat_with_docs/llm-based-rag.ipynb
+
+  - caption: Agents
+    chapters:
+    - file: 50_function_calling/12_function_calling_scadsai_llm.ipynb
+    - file: 66_arxiv_agent/arxiv_powerpoint_karaoke.ipynb
+
+
+  - caption: Links
+    chapters:
+    - url: https://zenodo.org/records/15006767
+      title: Download Slides
+    - url: https://creativecommons.org/licenses/by/4.0/
+      title: License CC-BY 4.0
+    - file: imprint
