@@ -1,0 +1,1140 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; ScaDS.AI Summer School LLM Tutorial</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '33_chat_with_docs/hpc_compendium_summaries';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../00_setup/readme.html">
+                        Setting up your computer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../15_endpoint_apis/01_scadsai_llm_endpoint.html">
+                        ScaDS.AI LLM endpoint
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../15_endpoint_apis/02_ollama_endpoint.html">
+                        Ollama
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../15_endpoint_apis/03_blablador_endpoint.html">
+                        Blablador endpoint
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../15_endpoint_apis/05_github_models_endpoints.html">
+                        Github Models Marketplace
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../15_endpoint_apis/07_openrouter_endpoint.html">
+                        OpenRouter endpoint
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../20_chatbots/readme.html">
+                        Chatbots
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../25_code_generation/bia-bob_demo.html">
+                        Generating code using bia-bob
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../25_code_generation/generating_guis.html">
+                        Generating graphical user interfaces
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../25_code_generation/generate_notebooks_reflection.html">
+                        Generating Jupyter Notebooks using Reflection
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../27_generating_data/synthetic_customer_data_llms.html">
+                        Generating synthetic customer data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../27_generating_data/synthetic_customer_data_rnd_generators.html">
+                        Combining LLMs with Random number generators for data generation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="text-embeddings.html">
+                        Text embeddings
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="chat-with-docs.html">
+                        Chat with your PDFs!
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="hpc-compendium-prepare-data.html">
+                        Chat with documentation about HPC systems
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="long-context-prompting.html">
+                        Long context prompting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="chat-with-hpc-compendium.html">
+                        Ask about the HPC compendium
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="llm-based-rag.html">
+                        LLM-based Retrieval Augmented Generation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../50_function_calling/12_function_calling_scadsai_llm.html">
+                        Function calling using ScaDS.AI’s LLM service
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../66_arxiv_agent/arxiv_powerpoint_karaoke.html">
+                        PowerPoint Karaoke about Arxiv papers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-external" href="https://zenodo.org/records/15006767">
+                        Download Slides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-external" href="https://creativecommons.org/licenses/by/4.0/">
+                        License CC-BY 4.0
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../imprint.html">
+                        Imprint
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../00_setup/readme.html">
+                        Setting up your computer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../15_endpoint_apis/01_scadsai_llm_endpoint.html">
+                        ScaDS.AI LLM endpoint
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../15_endpoint_apis/02_ollama_endpoint.html">
+                        Ollama
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../15_endpoint_apis/03_blablador_endpoint.html">
+                        Blablador endpoint
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../15_endpoint_apis/05_github_models_endpoints.html">
+                        Github Models Marketplace
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../15_endpoint_apis/07_openrouter_endpoint.html">
+                        OpenRouter endpoint
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../20_chatbots/readme.html">
+                        Chatbots
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../25_code_generation/bia-bob_demo.html">
+                        Generating code using bia-bob
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../25_code_generation/generating_guis.html">
+                        Generating graphical user interfaces
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../25_code_generation/generate_notebooks_reflection.html">
+                        Generating Jupyter Notebooks using Reflection
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../27_generating_data/synthetic_customer_data_llms.html">
+                        Generating synthetic customer data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../27_generating_data/synthetic_customer_data_rnd_generators.html">
+                        Combining LLMs with Random number generators for data generation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="text-embeddings.html">
+                        Text embeddings
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="chat-with-docs.html">
+                        Chat with your PDFs!
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="hpc-compendium-prepare-data.html">
+                        Chat with documentation about HPC systems
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="long-context-prompting.html">
+                        Long context prompting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="chat-with-hpc-compendium.html">
+                        Ask about the HPC compendium
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="llm-based-rag.html">
+                        LLM-based Retrieval Augmented Generation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../50_function_calling/12_function_calling_scadsai_llm.html">
+                        Function calling using ScaDS.AI’s LLM service
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../66_arxiv_agent/arxiv_powerpoint_karaoke.html">
+                        PowerPoint Karaoke about Arxiv papers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-external" href="https://zenodo.org/records/15006767">
+                        Download Slides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-external" href="https://creativecommons.org/licenses/by/4.0/">
+                        License CC-BY 4.0
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../imprint.html">
+                        Imprint
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    ScaDS.AI Summer School LLM Training
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Setup</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_setup/readme.html">Setting up your computer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">LLM basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../15_endpoint_apis/01_scadsai_llm_endpoint.html">ScaDS.AI LLM endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15_endpoint_apis/02_ollama_endpoint.html">Ollama</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15_endpoint_apis/03_blablador_endpoint.html">Blablador endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15_endpoint_apis/05_github_models_endpoints.html">Github Models Marketplace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15_endpoint_apis/07_openrouter_endpoint.html">OpenRouter endpoint</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../20_chatbots/readme.html">Chatbots</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../20_chatbots/gui.html">A Chatbot GUI</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Generating Code and Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../25_code_generation/bia-bob_demo.html">Generating code using bia-bob</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../25_code_generation/generating_guis.html">Generating graphical user interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../25_code_generation/generate_notebooks_reflection.html">Generating Jupyter Notebooks using Reflection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../27_generating_data/synthetic_customer_data_llms.html">Generating synthetic customer data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../27_generating_data/synthetic_customer_data_rnd_generators.html">Combining LLMs with Random number generators for data generation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Retrieval Augmented Generation (RAG)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="text-embeddings.html">Text embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chat-with-docs.html">Chat with your PDFs!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hpc-compendium-prepare-data.html">Chat with documentation about HPC systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="long-context-prompting.html">Long context prompting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chat-with-hpc-compendium.html">Ask about the HPC compendium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="llm-based-rag.html">LLM-based Retrieval Augmented Generation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Agents</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../50_function_calling/12_function_calling_scadsai_llm.html">Function calling using ScaDS.AI’s LLM service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../66_arxiv_agent/arxiv_powerpoint_karaoke.html">PowerPoint Karaoke about Arxiv papers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://zenodo.org/records/15006767">Download Slides</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">License CC-BY 4.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imprint.html">Imprint</a></li>
+
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-repository-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="https://github.com/ScaDS/LLM_Summer_School_Tutorial_2025" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">repository</span>
+</a>
+</a>
+      
+      <li><a href="https://github.com/ScaDS/LLM_Summer_School_Tutorial_2025/issues/new?title=Issue%20on%20page%20%2F33_chat_with_docs/hpc_compendium_summaries.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">open issue</span>
+</a>
+</a>
+      
+  </ul>
+</div>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../_sources/33_chat_with_docs/hpc_compendium_summaries.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <ul class="simple">
+<li><p><a class="reference external" href="http://accessibility.md">accessibility.md</a>:
+This document is an accessibility statement for the Technische Universität Dresden’s websites, outlining the university’s efforts to make its online presence accessible in accordance with German laws and regulations, and providing contact information for reporting accessibility issues and seeking remedies.</p></li>
+<li><p>data_protection_declaration.md:
+This document outlines a data protection policy, stating that only IP addresses are collected for error analysis and stored temporarily, with users having the right to request information about their data and contact relevant authorities if needed.</p></li>
+<li><p><a class="reference external" href="http://index.md">index.md</a>:
+This document provides an overview of the High-Performance Computing (HPC) systems and services offered by the Center for Information Services and High-Performance Computing (ZIH) at TU Dresden, including documentation, contribution guidelines, news, training courses, and support options.</p></li>
+<li><p>legal_notice.md:
+This document provides a legal notice for a website or repository affiliated with the Technical University of Dresden, outlining the responsible parties, contact information, and licensing terms for documentation and software components.</p></li>
+<li><p>access/desktop_cloud_visualization.md:
+NICE DCV is a remote access solution that enables users to run OpenGL 3D applications on ZIH systems using the server’s GPUs, with optional access through JupyterHub and instructions for checking GPU support and configuring the environment.</p></li>
+<li><p>access/graphical_applications_with_webvnc.md:
+This document describes how to run graphical applications on ZIH systems using WebVNC, a solution based on a Singularity container with a VNC setup that can be accessed via JupyterHub or a terminal, providing a web-based client that eliminates the need for additional software.</p></li>
+<li><p>access/jupyterhub.md:
+The ZIH (Zentrum für Informationsdienste und Hochleistungsrechnen) offers a JupyterHub service, providing an easy-to-use environment for working with Jupyter notebooks on their systems, with features such as customizable profiles, JupyterLab, and support for various programming languages like Python, R, and Julia.</p></li>
+<li><p>access/jupyterhub_custom_environments.md:
+This document provides a step-by-step guide on creating and using custom environments for JupyterHub, allowing users to install their preferred Python packages and use them in their notebooks on various architectures at ZIH systems.</p></li>
+<li><p>access/jupyterhub_for_teaching.md:
+This document introduces useful features of JupyterHub for teaching, including cloning repositories, spawning options, creating shared Python environments, and setting up custom Jupyter kernels, to help educators effectively utilize the platform for their courses.</p></li>
+<li><p>access/jupyterhub_teaching_example.md:
+This document provides a step-by-step guide on setting up a Jupyter Lab course using JupyterHub, including creating custom environments, cloning repositories, and activating environments for students to work on notebooks during a course.</p></li>
+<li><p>access/jupyterlab.md:
+This document provides step-by-step instructions on how to access JupyterLab without using JupyterHub on various clusters, including Alpha Centauri, Barnard, Capella, Romeo, and Visualization, using either port forwarding or X11 forwarding methods.</p></li>
+<li><p>access/jupyterlab_user.md:
+Users can now install a custom version of JupyterLab, although support will not be provided by the technicians, and a step-by-step installation process is outlined in the document.</p></li>
+<li><p>access/key_fingerprints.md:
+This document provides a list of up-to-date key fingerprints for various login nodes and dataport nodes of high-performance computing (HPC) systems, to help users verify the authenticity of the servers they are connecting to.</p></li>
+<li><p>access/overview.md:
+The ZIH systems can be accessed through various methods, including SSH, Desktop Cloud Visualization, WebVNC, and JupyterHub, but require a HPC project, login, and connection via the university’s network or a Virtual Private Network (VPN) for security reasons.</p></li>
+<li><p>access/security_restrictions.md:
+Following a security incident, the German HPC sites in Gauß Alliance, including ZIH systems, have implemented new security restrictions, such as mandatory password changes, updated SSH key requirements, and limited access to and from the systems, to prevent malware infection and spreading.</p></li>
+<li><p>access/ssh_login.md:
+This document provides a step-by-step guide on how to connect to the ZIH systems via terminal on Linux, Mac, and Windows operating systems, including setting up SSH keys, configuring default parameters, and enabling X11-forwarding for graphical applications.</p></li>
+<li><p>access/ssh_mobaxterm.md:
+This markdown document provides a step-by-step guide on how to connect to a remote server using MobaXterm, a terminal emulator for Windows, including download and installation, configuration of local settings, and starting a new SSH session.</p></li>
+<li><p>access/ssh_putty.md:
+This document provides a step-by-step guide on how to connect to a remote server using PuTTY, a free and open-source terminal emulator, on a Windows system, including downloading and installing PuTTY, starting a new SSH session, and configuring connection details such as username, SSH-key, and X-forwarding.</p></li>
+<li><p>application/acknowledgement.md:
+The document requests that users of the NHR center at TU Dresden’s high-performance computing (HPC) systems acknowledge the resource usage in their publications, providing examples of acknowledgement statements in different scenarios.</p></li>
+<li><p>application/overview.md:
+This document provides information on the application process for using High-Performance Computing (HPC) resources at the TU Dresden, including eligibility criteria, project types, and the application workflow through the JARDS system.</p></li>
+<li><p>application/project_management.md:
+This document provides an overview of the user management responsibilities and tools available to project leaders and administrators for managing High-Performance Computing (HPC) projects at the Technical University of Dresden, including adding and removing users, monitoring resources, and tracking project statistics.</p></li>
+<li><p>application/terms_of_use.md:
+This document outlines the Terms of Use for the High-Performance Computing (HPC) resources at the Center for Information Services and High-Performance Computing (ZIH) at TU Dresden, highlighting key points such as data storage, project responsibilities, and user obligations, with only the German version being legally binding.</p></li>
+<li><p>contrib/content_rules.md:
+This markdown document outlines the content rules and guidelines for contributing to a documentation project, covering aspects such as writing style, Markdown syntax, code blocks, spelling, and technical wording, to ensure consistency and quality in the documentation.</p></li>
+<li><p>contrib/contribute_browser.md:
+This document provides a step-by-step guide on how to contribute to the HPC documentation of TU Dresden/ZIH using GitLab’s web interface, including preparation, creating a branch, editing and adding articles, submitting for publication, and undergoing the revision process.</p></li>
+<li><p>contrib/contribute_container.md:
+This markdown document provides a step-by-step guide on how to contribute to the HPC documentation of TU Dresden/ZIH via a local clone of the Git repository, including setup, working with the local clone, merging forked repositories, and using tools to ensure quality, such as Docker containers and automated checks for links, spelling, and text format.</p></li>
+<li><p>contrib/howto_contribute.md:
+This documentation provides guidelines on how to contribute to the HPC Compendium, including technical setup, content rules, Git workflow, and various ways to contribute, such as via issue, web IDE, or local clone, to help maintain a high-quality and consistent documentation.</p></li>
+<li><p>data_lifecycle/data_sharing.md:
+This document provides guidance on sharing data with other users or projects, including commands for granting access to files or directories, managing access rights using Access Control Lists (ACLs), and setting permissions for groups and individual users.</p></li>
+<li><p>data_lifecycle/file_systems.md:
+This document provides an overview of the different filesystems available on ZIH systems, including permanent and working filesystems, and offers recommendations for efficient usage, troubleshooting, and debugging of filesystem issues.</p></li>
+<li><p>data_lifecycle/longterm_preservation.md:
+This markdown document provides guidance on the long-term preservation of research data, including why and what data should be preserved, the importance of adding meta-data, and options for archiving data at the ZIH (Center for Information Services and High Performance Computing) of TU Dresden.</p></li>
+<li><p>data_lifecycle/lustre.md:
+This document provides guidelines and useful commands for optimizing performance and managing storage on a Lustre filesystem, a high-performance parallel file system often used in high-performance computing environments.</p></li>
+<li><p>data_lifecycle/overview.md:
+This document provides guidelines for efficient data life cycle management in high-performance computing (HPC) projects, covering topics such as data storage, backup, folder structure, metadata, data hygiene, and access rights to ensure consistency, collaboration, and security throughout the project.</p></li>
+<li><p>data_lifecycle/permanent.md:
+This document provides an overview of the permanent filesystems available on a high-performance computing (HPC) system, including their usage guidelines, quotas, and backup policies to help users manage their data efficiently.</p></li>
+<li><p>data_lifecycle/working.md:
+This document provides an overview of the various filesystems available on ZIH systems, including their capacities, performances, and usage recommendations, as well as tips for efficient usage and debugging common filesystem issues.</p></li>
+<li><p>data_lifecycle/workspaces.md:
+The document describes the concept of “Workspaces” at ZIH, which is a mechanism to manage data on high-performance computing (HPC) systems, allowing users to allocate temporary storage spaces with limited lifetimes and quotas, and providing tools to list, extend, restore, and delete these workspaces, as well as features for cooperative usage and troubleshooting.</p></li>
+<li><p>data_transfer/datamover.md:
+The Datamover is a specialized data transfer system within the ZIH HPC systems that provides high-speed file transfers between different filesystems using unique commands such as <code class="docutils literal notranslate"><span class="pre">dtcp</span></code>, <code class="docutils literal notranslate"><span class="pre">dtmv</span></code>, and <code class="docutils literal notranslate"><span class="pre">dtrsync</span></code>, while also allowing management of transfer jobs and integration with external systems like group drives.</p></li>
+<li><p>data_transfer/dataport_nodes.md:
+This document provides guidance on transferring large data to and from ZIH systems using dataport nodes, which offer higher bandwidth and are designed for this purpose, and explains how to use tools like SCP, SFTP, and Rsync to transfer files from Linux and Windows systems.</p></li>
+<li><p>data_transfer/object_storage.md:
+This document provides instructions on how to transfer data between ZIH systems and object storage (S3) using the <code class="docutils literal notranslate"><span class="pre">rclone</span></code> module, including initial configuration, copying data to and from object storage, and accessing stored files from various locations.</p></li>
+<li><p>data_transfer/overview.md:
+This document provides guidance on data transfer to and from ZIH systems using tools like <code class="docutils literal notranslate"><span class="pre">scp</span></code>, <code class="docutils literal notranslate"><span class="pre">rsync</span></code>, and <code class="docutils literal notranslate"><span class="pre">sftp</span></code> via dataport nodes, as well as data transfer inside ZIH systems using the Datamover service.</p></li>
+<li><p>jobs_and_resources/alpha_centauri.md:
+The Alpha Centauri GPU cluster is a multi-GPU system installed for AI-related computations, featuring 48 physical cores, 8 NVIDIA A100-SXM4 GPUs, and 1 TB RAM per node, with various software and usage options available, including modules, Python virtual environments, JupyterHub, and Singularity containers.</p></li>
+<li><p>jobs_and_resources/arm_hpc_devkit.md:
+The NVIDIA Arm HPC Developer Kit is a system provided by the ZIH for experimentation with Arm-based systems, featuring an Ampere Altra Q80-30 processor, 512G DDR4 memory, and 2x NVIDIA A100 GPUs, and can be accessed via SSH after obtaining permission from the hpcsupport team.</p></li>
+<li><p>jobs_and_resources/binding_and_distribution_of_tasks.md:
+This document provides an overview of task binding and distribution strategies in Slurm, a workload manager, including various options for binding tasks to cores, sockets, and nodes, and their potential impact on application execution time.</p></li>
+<li><p>jobs_and_resources/capella.md:
+The Lenovo multi-GPU cluster “Capella” is a high-performance computing system installed for AI-related computations and traditional HPC simulations, fully integrated into the ZIH HPC infrastructure and ranked #51 in the TOP500 list of the world’s fastest computers.</p></li>
+<li><p>jobs_and_resources/checkpoint_restart.md:
+This document discusses the concept of checkpointing and restarting in high-performance computing (HPC) systems, which allows users to save the state of a running process and resume it later, preventing losses due to system failures or timeouts, and providing an example of how to use the Distributed Multi-Threaded Check-Pointing (DMTCP) tool to implement checkpointing in Slurm batch jobs.</p></li>
+<li><p>jobs_and_resources/hardware_overview.md:
+The ZIH systems offer a range of High Performance Computing (HPC) resources, including six homogeneous clusters with over 100,000 CPU cores and a peak performance of more than 1.5 quadrillion floating point operations per second, tailored to support data-intensive computing, Big Data analytics, and artificial intelligence methods.</p></li>
+<li><p>jobs_and_resources/julia.md:
+The SMP Cluster Julia is a high-performance computing system featuring a large shared memory node, optimized for data-intensive applications, with 370 TB of NVMe storage and configurable quotas for projects, suitable for OpenMP and Open MPI applications with large memory demands.</p></li>
+<li><p>jobs_and_resources/mpi_issues.md:
+This document outlines several known issues with MPI (Message Passing Interface) implementations, specifically with Open MPI, including performance losses, incorrect resource distribution, and segmentation faults, along with suggested workarounds and solutions for each problem.</p></li>
+<li><p>jobs_and_resources/nvme_storage.md:
+The document describes the configuration of 90 NVMe storage nodes, each equipped with Intel NVMe SSDs, InfiniBand links, Intel Xeon processors, and RAM, capable of high-speed data transfer.</p></li>
+<li><p>jobs_and_resources/overview.md:
+This markdown document provides an introduction to the High Performance Computing (HPC) resources and jobs at the ZIH, including the available hardware, selection of suitable clusters, job submission, and resource management, to help users effectively utilize the HPC systems for their research goals.</p></li>
+<li><p>jobs_and_resources/power9.md:
+The GPU Cluster Power9 is a multi-GPU cluster that was installed in 2018 and has been re-engineered as a standalone cluster with its own Slurm batch system and login nodes, featuring six NVIDIA Tesla V100 GPUs per node and supporting AI, analytics, and data-intensive workloads.</p></li>
+<li><p>jobs_and_resources/romeo.md:
+The CPU Cluster Romeo is a general-purpose cluster based on AMD Rome CPUs, consisting of a homogeneous standalone system with its own Slurm batch system and login nodes, offering 128 physical cores and 512 GB of main memory per node, with specific usage guidelines and considerations for running jobs and utilizing software modules.</p></li>
+<li><p>jobs_and_resources/slurm.md:
+Here is a one-sentence summary of the markdown document in English:</p></li>
+</ul>
+<p>This document provides a comprehensive overview of the batch system Slurm used for resource management and job scheduling at ZIH, including how to submit jobs, manage resources, and use various Slurm options and commands to control and monitor jobs.</p>
+<ul class="simple">
+<li><p>jobs_and_resources/slurm_examples.md:
+This markdown document provides examples and guidelines for submitting various types of jobs, including parallel jobs, MPI jobs, and array jobs, as well as requesting exclusive resources, GPUs, and chain jobs, using the Slurm job scheduler on a high-performance computing cluster.</p></li>
+<li><p>jobs_and_resources/slurm_examples_with_gpu.md:
+This markdown document provides guidance on requesting and utilizing GPU resources via the Slurm batch system, including examples of job scripts for requesting GPUs, limitations on GPU job allocations, and running multiple GPU applications simultaneously in a batch job.</p></li>
+<li><p>jobs_and_resources/slurm_generator.md:
+This markdown document describes a Slurm Job File Generator, a tool that helps users create job files for submitting high-performance computing (HPC) jobs to a Slurm-managed cluster.</p></li>
+<li><p>jobs_and_resources/slurm_limits.md:
+This document outlines the resource limits for using the Slurm batch system on ZIH systems, including restrictions on runtime and memory usage, to ensure efficient and fair usage of shared computing resources.</p></li>
+<li><p>quickstart/getting_started.md:
+This markdown document provides a comprehensive guide for new users to get started with the High Performance Computing (HPC) systems at the ZIH, including applying for a login, accessing the systems, transferring code and data, accessing software, and running parallel HPC jobs.</p></li>
+<li><p>software/big_data_frameworks.md:
+This document provides an overview of using Big Data analytics frameworks, including Apache Spark, Apache Flink, and Apache Hadoop, on the ZIH systems, covering prerequisites, usage in interactive and batch jobs, and with Jupyter notebooks, as well as troubleshooting tips.</p></li>
+<li><p>software/building_software.md:
+To build software on the system, it’s recommended to use a job and a separate build directory in the <code class="docutils literal notranslate"><span class="pre">/data/horse</span></code> filesystem, rather than compiling directly in the read-only <code class="docutils literal notranslate"><span class="pre">/projects</span></code> filesystem, and then install the software back to <code class="docutils literal notranslate"><span class="pre">/projects</span></code> using the login nodes.</p></li>
+<li><p>software/cfd.md:
+This markdown document provides an overview of the Computational Fluid Dynamics (CFD) applications available on a system, including OpenFOAM, Ansys CFX, Ansys Fluent, ICEM CFD, and STAR-CCM+, along with examples of job scripts and usage instructions for each application.</p></li>
+<li><p>software/cicd.md:
+The document describes how to set up a Continuous Integration/Continuous Deployment (CI/CD) pipeline using GitLab Runner on the ZIH systems, allowing users to continuously build, test, and benchmark their HPC software in the target environment.</p></li>
+<li><p>software/compilers.md:
+This document provides an overview of the compilers and flags available on the ZIH system, including GNU, Clang, Intel, and PGI compilers, and explains how to use various compiler flags to optimize code for performance, debugging, and specific architectures.</p></li>
+<li><p>software/containers.md:
+This markdown document describes the use of Singularity, a containerization platform, on ZIH systems, including its installation, creation of custom containers, and usage, allowing users to run applications in a controlled environment with full control over dependencies and libraries.</p></li>
+<li><p>software/custom_easy_build_environment.md:
+This markdown document provides a step-by-step guide on how to use EasyBuild to install custom software modules on the ZIH systems, including setting up a workspace, allocating nodes, loading the correct module environment, and building and loading custom modules using EasyBuild.</p></li>
+<li><p>software/data_analytics.md:
+This document provides an overview of the data analytics tools and resources available on ZIH systems, including Python, R, and Big Data frameworks, as well as guidance on how to access and utilize these tools, manage data, and set up collaborative workflows.</p></li>
+<li><p>software/data_analytics_with_python.md:
+This markdown document provides an introduction to using Python for data analytics on the ZIH system, covering topics such as Python consoles, virtual environments, Jupyter notebooks, parallel computing with Pandas and Dask, and using MPI for Python with mpi4py.</p></li>
+<li><p>software/data_analytics_with_r.md:
+This document provides an overview of using R for data analytics, including its programming language and environment for statistical computing and graphics, and how to use it on a cluster with Slurm job scheduler, including interactive and batch jobs, RStudio, installing packages, deep learning with TensorFlow, and parallel computing methods such as shared-memory and distributed-memory parallelism using libraries like parallel, Rmpi, and foreach.</p></li>
+<li><p>software/data_analytics_with_rstudio.md:
+This document provides an overview of using RStudio, an integrated development environment for R, on ZIH systems, including the option to run it directly in the browser through JupyterHub.</p></li>
+<li><p>software/debuggers.md:
+This markdown document provides an overview of debugging tools and techniques available at ZIH systems, including an introduction to parallel debugging, advice on how to prepare code for debugging, and detailed information on using debuggers such as GDB and Arm DDT, as well as memory debugging tools like Valgrind.</p></li>
+<li><p>software/distributed_training.md:
+This document provides an overview of distributed training in machine learning, covering concepts such as data parallelism and model parallelism, and offering guidance on implementing distributed training using frameworks like TensorFlow, PyTorch, and Horovod, with examples and code snippets to facilitate the process.</p></li>
+<li><p>software/energy_measurement.md:
+The Intel Haswell nodes of the ZIH system are equipped with power instrumentation that allows for the recording and accounting of power dissipation and energy consumption data, which can be accessed through various interfaces, including command line tools, Slurm tools, and a C API.</p></li>
+<li><p>software/fem_software.md:
+This markdown document provides an overview of various finite element method (FEM) software packages available on ZIH systems, including Abaqus, Ansys, COMSOL Multiphysics, and LS-DYNA, with detailed instructions on how to use them interactively and in batch mode, along with examples and tips for efficient usage.</p></li>
+<li><p>software/gpu_programming.md:
+This markdown document provides a comprehensive guide to GPU programming, including available GPUs, using GPUs with Slurm, directive-based GPU programming with OpenACC and OpenMP, native GPU programming with CUDA, and performance analysis tools such as NVIDIA nvprof, Visual Profiler, Nsight Systems, and Nsight Compute.</p></li>
+<li><p>software/hyperparameter_optimization.md:
+Here is a one-sentence summary of the markdown document in English:</p></li>
+</ul>
+<p>The OmniOpt tool performs hyperparameter optimization for classical simulations and machine learning algorithms, and this document provides a step-by-step guide on how to use OmniOpt, including preparation of the application script, configuration, and evaluation of results.</p>
+<ul class="simple">
+<li><p>software/licenses.md:
+This document explains how users can install and use their own software licenses on ZIH systems, including configuring license servers and environment variables to override default settings.</p></li>
+<li><p>software/lo2s.md:
+The <code class="docutils literal notranslate"><span class="pre">lo2s</span></code> tool is a lightweight, node-level performance monitoring tool that creates parallel OTF2 traces, providing a detailed view of both application and system performance, and can operate in either process monitoring or system monitoring mode.</p></li>
+<li><p>software/machine_learning.md:
+This markdown document provides an introduction to running machine learning applications on ZIH systems, covering topics such as recommended GPU clusters, loading modules, using Python and R for machine learning, working with Jupyter Notebooks and containers, and accessing additional libraries and datasets for machine learning tasks.</p></li>
+<li><p>software/mathematics.md:
+This markdown document provides an overview of mathematics applications, including the use of Mathematica and MATLAB on a high-performance computing system, with instructions on how to install, configure, and utilize these tools for various mathematical tasks, including parallel computing and batch jobs.</p></li>
+<li><p>software/math_libraries.md:
+This document provides an overview of various high-quality mathematics libraries available for use, including BLAS, LAPACK, ScaLAPACK, AOCL, and MKL, which offer efficient and optimized implementations of linear algebra and other mathematical functions for different hardware architectures.</p></li>
+<li><p>software/modules.md:
+The document describes the environment modules system used to manage software on high-performance computing (HPC) systems, providing a way to dynamically modify user environments and access various compilers, libraries, and utilities.</p></li>
+<li><p>software/mpi_usage_error_detection.md:
+The ZIH maintains and supports the MUST tool to automatically check if MPI applications conform to the MPI standard and to detect errors or non-portable constructs, and this document provides a guide on how to set up and use MUST to check the correctness of MPI applications.</p></li>
+<li><p>software/nanoscale_simulations.md:
+This markdown document provides an overview of various software packages available for nanoscale simulations, including ABINIT, CP2K, CPMD, GAMESS, Gaussian, GROMACS, LAMMPS, NAMD, ORCA, Siesta, and VASP, along with instructions on how to access and use these packages on a high-performance computing system.</p></li>
+<li><p>software/ngc_containers.md:
+This markdown document provides a guide on using GPU-accelerated containers for deep learning, specifically NVIDIA’s NGC containers, on the ZIH system, including how to run them on single and multiple GPUs, as well as the limitations and potential issues with multi-node usage.</p></li>
+<li><p>software/overview.md:
+This document provides an overview of the environment and software used on ZIH systems, covering the user environment, software environment, and various options for working with software, including modules, Jupyter Notebook, and containers.</p></li>
+<li><p>software/papi.md:
+This document provides an introduction to the Performance Application Programming Interface (PAPI), a tool for measuring CPU performance counters, and guides users on how to use PAPI’s high-level and low-level APIs to collect performance events on various computer systems, including those at the ZIH (Zentrum für Informationsdienste und Hochleistungsrechnen).</p></li>
+<li><p>software/performance_engineering_overview.md:
+This document provides an overview of performance engineering, a process aimed at ensuring that computing systems meet expectations for performance, including techniques, objectives, and tools used to measure, analyze, and optimize system performance.</p></li>
+<li><p>software/perf_tools.md:
+This document provides an overview of the Linux “perf” command, a performance analysis tool that provides detailed information about system and application performance, including sampling, tracing, and counting of various hardware and software events.</p></li>
+<li><p>software/pika.md:
+This document describes PIKA, a hardware performance monitoring stack used to track and analyze the efficiency of Slurm jobs on high-performance computing (HPC) systems, providing a web interface for visualization and analysis of job performance data.</p></li>
+<li><p>software/power_ai.md:
+This document provides an overview of the PowerAI framework for machine learning, including links to various documentation sources, user guides, and information on supported software packages, all specific to PowerAI version 1.5.4 and compatible with the Power9 cluster.</p></li>
+<li><p>software/private_modules.md:
+This document provides a step-by-step guide on setting up and using private modules, which allow users to load their own installed software packages into their environment and manage different versions without conflicts, for both single users and project groups.</p></li>
+<li><p>software/python_virtual_environments.md:
+This document provides guidance on using Python virtual environments on ZIH systems, covering the creation, activation, and management of virtual environments using <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code>, as well as best practices for persisting and recreating these environments.</p></li>
+<li><p>software/pytorch.md:
+This document provides an overview of using PyTorch, an open-source machine learning framework, on a high-performance computing cluster, including installation, usage, and troubleshooting tips for working with PyTorch on various clusters and environments.</p></li>
+<li><p>software/scorep.md:
+The Score-P measurement infrastructure is a scalable tool suite for profiling, event tracing, and online analysis of HPC applications, supporting various parallelization types and features, and can be easily used by prepending the Score-P wrapper to compile and link commands.</p></li>
+<li><p>software/singularity_power9.md:
+This markdown document provides guidance on building Singularity containers for the Power9 architecture on ZIH systems, including the use of a virtual machine to gain root permissions, and introduces two helper programs, <code class="docutils literal notranslate"><span class="pre">buildSingularityImage</span></code> and <code class="docutils literal notranslate"><span class="pre">startInVM</span></code>, to simplify the process.</p></li>
+<li><p>software/singularity_recipe_hints.md:
+This markdown document provides a collection of recipes and hints for using Singularity, a container platform, including example definitions for creating containers, running GUI applications, using hardware acceleration, and configuring temporary and cache directories.</p></li>
+<li><p>software/software_development_overview.md:
+This markdown document provides an overview of software development and tools on the ZIH systems, covering topics such as compiling code, using libraries, debugging, and optimizing performance, along with helpful hints and questions to consider for ensuring reliable and efficient code.</p></li>
+<li><p>software/spec.md:
+This document provides a guide on how to use the SPEChpc 2021 benchmark suite to compare the performance of different high-performance computing (HPC) systems and evaluate parallel strategies for applications on a target HPC system.</p></li>
+<li><p>software/tensorboard.md:
+This document provides instructions on how to use TensorBoard, a visualization toolkit for TensorFlow, to inspect model training, either through JupyterHub or by using the TensorBoard extension of the TensorFlow module on ZIH systems.</p></li>
+<li><p>software/tensorflow.md:
+This document provides an overview of using Neural Networks with TensorFlow on a cluster, including how to load TensorFlow modules, work with TensorFlow in various environments such as consoles, JupyterHub, and containers, and ensure compatibility between TensorFlow 1 and 2.</p></li>
+<li><p>software/utilities.md:
+This markdown document provides an overview of various utilities and tools available on the ZIH systems to make life easier for computer scientists, including Tmux, a terminal multiplexer, lstopo for displaying system topology, and tools for working with large archives and compressed files, such as rapidgzip and Ratarmount.</p></li>
+<li><p>software/vampir.md:
+This markdown document provides a comprehensive guide on using Vampir, a graphical analysis framework for studying the course of events in parallel programs, including its installation, usage, and advanced features such as VampirServer for scalable analysis capabilities.</p></li>
+<li><p>software/virtual_desktops.md:
+This document provides instructions on how to use WebVNC or DCV to run GUI applications on high-performance computing (HPC) resources, including launching a virtual desktop, reconnecting to a session, and terminating a remote session.</p></li>
+<li><p>software/virtual_machines.md:
+This markdown document provides instructions for users to build their own Singularity containers on ZIH systems using virtual machines (VMs), including how to create and access a VM, example usage, automation tools, and troubleshooting known issues.</p></li>
+<li><p>software/visualization.md:
+This document provides an overview of using ParaView, an open-source data analysis and visualization application, on a high-performance computing cluster, including instructions for interactive and batch modes, as well as tips for optimizing performance and troubleshooting common issues.</p></li>
+<li><p>software/zsh.md:
+This document introduces ZSH (z-shell) as an alternative shell to Bash, offering various convenience features, and provides examples and installation instructions for using ZSH with the oh-my-zsh plugin on Linux systems, particularly on ZIH systems.</p></li>
+<li><p>support/support.md:
+This document outlines the user support options for the HPC system at TU Dresden, including creating a ticket by emailing <a class="reference external" href="mailto:hpc-support&#37;&#52;&#48;tu-dresden&#46;de">hpc-support<span>&#64;</span>tu-dresden<span>&#46;</span>de</a> and attending open Q&amp;A sessions, and encourages users to first consult the documentation for answers to their questions.</p></li>
+</ul>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./33_chat_with_docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Haase
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on 2025-06-20.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+Copyright: Licensed <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a> unless mentioned otherwise. 
+Contributions and feedback are welcome.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>
