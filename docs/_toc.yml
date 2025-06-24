@@ -25,10 +25,11 @@ parts:
 
   - caption: Generating Code and Data
     chapters:
-    - file: 25_code_generation/bia-bob_demo.ipynb
-    - file: 25_code_generation/generating_guis.ipynb
-
-    - file: 25_code_generation/generate_notebooks_reflection.ipynb
+    - file: 25_code_generation/10_extending_jupyter_notebooks.ipynb
+    - file: 25_code_generation/20_long_context_prompting.ipynb
+    - file: 25_code_generation/30_bia-bob_demo.ipynb
+    - file: 25_code_generation/35_generating_guis.ipynb
+    - file: 25_code_generation/40_system_messages.ipynb
 
     - file: 27_generating_data/synthetic_customer_data_llms.ipynb
     - file: 27_generating_data/synthetic_customer_data_rnd_generators.ipynb
