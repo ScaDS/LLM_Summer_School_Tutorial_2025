@@ -40,7 +40,7 @@ conda activate scads-llm
 
 ## Setting up VPN to TU-Dresden
 
-You will need a VPN-connection to TU Dresden. Install everything necessary as explained on [this page](https://tu-dresden.de/zih/dienste/service-katalog/arbeitsumgebung/zugang_datennetz/vpn). If you need a Guest Account at TU Dresden, please reach out to the SECAI School Coordinator.
+You will need a VPN-connection to TU Dresden. Install everything necessary as explained on [this page](https://tu-dresden.de/zih/dienste/service-katalog/arbeitsumgebung/zugang_datennetz/vpn) ([eduVPN recommended](https://faq.tickets.tu-dresden.de/otrs/public.pl?Action=PublicFAQZoom;ItemID=1284). If you need a Guest Account at TU Dresden, please reach out to the ScaDS.AI Training School Coordination.
 
 
 ## Setting up API keys
