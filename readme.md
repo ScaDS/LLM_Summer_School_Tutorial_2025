@@ -1,8 +1,8 @@
-# SECAI LLM Training
+# ScaDS.AI Summer School LLM Training
 
-This repository contains a collection of Python Jupyter notebooks used in a training session with [SECAI](https://secai.org/) explaining LLMs and how to use them using the [ScaDS.AI LLM Services](https://llm.scads.ai/) (VPN required). The content is available at
+This repository contains a collection of Python Jupyter notebooks used in a training session of the [ScaDS.AI](https://scads.ai) Summer School explaining LLMs and how to use them using the [ScaDS.AI LLM Services](https://llm.scads.ai/) (VPN required). The content is available at
 
-https://scads.github.io/secai_llm_training
+http://scads.github.io/LLM_Summer_School_Tutorial_2025
 
 It is maintained using [Jupyter lab](https://jupyterlab.readthedocs.io/en/stable/) and build using [Jupyter book](https://jupyterbook.org/intro.html).
 
