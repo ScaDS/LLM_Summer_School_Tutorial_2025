@@ -58,11 +58,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '25_code_generation/generating_guis';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '25_code_generation/35_generating_guis';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Generating Jupyter Notebooks using Reflection" href="generate_notebooks_reflection.html" />
-    <link rel="prev" title="Generating code using bia-bob" href="bia-bob_demo.html" />
+    <link rel="next" title="Configure bia-bob’s behaviour through system messages" href="40_system_messages.html" />
+    <link rel="prev" title="Generating code using bia-bob" href="30_bia-bob_demo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -191,7 +191,21 @@ const thebe_selector_output = ".output, .cell_output"
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="bia-bob_demo.html">
+                      <a class="nav-link nav-internal" href="10_extending_jupyter_notebooks.html">
+                        Extending Jupyter Notebooks
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="20_long_context_prompting.html">
+                        Long-context prompting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="30_bia-bob_demo.html">
                         Generating code using bia-bob
                       </a>
                     </li>
@@ -205,8 +219,8 @@ const thebe_selector_output = ".output, .cell_output"
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="generate_notebooks_reflection.html">
-                        Generating Jupyter Notebooks using Reflection
+                      <a class="nav-link nav-internal" href="40_system_messages.html">
+                        Configure bia-bob’s behaviour through system messages
                       </a>
                     </li>
                 
@@ -425,7 +439,21 @@ const thebe_selector_output = ".output, .cell_output"
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="bia-bob_demo.html">
+                      <a class="nav-link nav-internal" href="10_extending_jupyter_notebooks.html">
+                        Extending Jupyter Notebooks
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="20_long_context_prompting.html">
+                        Long-context prompting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="30_bia-bob_demo.html">
                         Generating code using bia-bob
                       </a>
                     </li>
@@ -439,8 +467,8 @@ const thebe_selector_output = ".output, .cell_output"
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="generate_notebooks_reflection.html">
-                        Generating Jupyter Notebooks using Reflection
+                      <a class="nav-link nav-internal" href="40_system_messages.html">
+                        Configure bia-bob’s behaviour through system messages
                       </a>
                     </li>
                 
@@ -624,10 +652,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Generating Code and Data</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="bia-bob_demo.html">Generating code using bia-bob</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_extending_jupyter_notebooks.html">Extending Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_long_context_prompting.html">Long-context prompting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="30_bia-bob_demo.html">Generating code using bia-bob</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Generating graphical user interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generate_notebooks_reflection.html">Generating Jupyter Notebooks using Reflection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="40_system_messages.html">Configure bia-bob’s <em>behaviour</em> through system messages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../27_generating_data/synthetic_customer_data_llms.html">Generating synthetic customer data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../27_generating_data/synthetic_customer_data_rnd_generators.html">Combining LLMs with Random number generators for data generation</a></li>
 </ul>
@@ -736,7 +766,7 @@ title="Source repository"
 </a>
 </a>
       
-      <li><a href="https://github.com/ScaDS/LLM_Summer_School_Tutorial_2025/issues/new?title=Issue%20on%20page%20%2F25_code_generation/generating_guis.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ScaDS/LLM_Summer_School_Tutorial_2025/issues/new?title=Issue%20on%20page%20%2F25_code_generation/35_generating_guis.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -761,7 +791,7 @@ title="Open an issue"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      <li><a href="../_sources/25_code_generation/generating_guis.ipynb" target="_blank"
+      <li><a href="../_sources/25_code_generation/35_generating_guis.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -971,17 +1001,17 @@ Make sure the plot is updated - and not multiple plots are shown.
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="bia-bob_demo.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="30_bia-bob_demo.html" title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
           <p class="prev-next-title">Generating code using bia-bob</p>
       </div>
   </a>
-  <a class='right-next' id="next-link" href="generate_notebooks_reflection.html" title="next page">
+  <a class='right-next' id="next-link" href="40_system_messages.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Generating Jupyter Notebooks using Reflection</p>
+      <p class="prev-next-title">Configure bia-bob’s <em>behaviour</em> through system messages</p>
   </div>
   <i class="fa-solid fa-angle-right"></i>
   </a>

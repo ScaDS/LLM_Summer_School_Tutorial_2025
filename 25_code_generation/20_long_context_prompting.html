@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Generating Jupyter Notebooks using Reflection &#8212; ScaDS.AI Summer School LLM Tutorial</title>
+    <title>Long-context prompting &#8212; ScaDS.AI Summer School LLM Tutorial</title>
   
   
   
@@ -58,11 +58,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '25_code_generation/generate_notebooks_reflection';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '25_code_generation/20_long_context_prompting';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Generating synthetic customer data" href="../27_generating_data/synthetic_customer_data_llms.html" />
-    <link rel="prev" title="Generating graphical user interfaces" href="generating_guis.html" />
+    <link rel="next" title="Generating code using bia-bob" href="30_bia-bob_demo.html" />
+    <link rel="prev" title="Extending Jupyter Notebooks" href="10_extending_jupyter_notebooks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -191,22 +191,36 @@ const thebe_selector_output = ".output, .cell_output"
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="bia-bob_demo.html">
-                        Generating code using bia-bob
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="generating_guis.html">
-                        Generating graphical user interfaces
+                      <a class="nav-link nav-internal" href="10_extending_jupyter_notebooks.html">
+                        Extending Jupyter Notebooks
                       </a>
                     </li>
                 
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
-                        Generating Jupyter Notebooks using Reflection
+                        Long-context prompting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="30_bia-bob_demo.html">
+                        Generating code using bia-bob
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="35_generating_guis.html">
+                        Generating graphical user interfaces
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="40_system_messages.html">
+                        Configure bia-bob’s behaviour through system messages
                       </a>
                     </li>
                 
@@ -429,22 +443,36 @@ const thebe_selector_output = ".output, .cell_output"
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="bia-bob_demo.html">
-                        Generating code using bia-bob
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="generating_guis.html">
-                        Generating graphical user interfaces
+                      <a class="nav-link nav-internal" href="10_extending_jupyter_notebooks.html">
+                        Extending Jupyter Notebooks
                       </a>
                     </li>
                 
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
-                        Generating Jupyter Notebooks using Reflection
+                        Long-context prompting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="30_bia-bob_demo.html">
+                        Generating code using bia-bob
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="35_generating_guis.html">
+                        Generating graphical user interfaces
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="40_system_messages.html">
+                        Configure bia-bob’s behaviour through system messages
                       </a>
                     </li>
                 
@@ -628,10 +656,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Generating Code and Data</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="bia-bob_demo.html">Generating code using bia-bob</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_extending_jupyter_notebooks.html">Extending Jupyter Notebooks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Long-context prompting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="30_bia-bob_demo.html">Generating code using bia-bob</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="generating_guis.html">Generating graphical user interfaces</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Generating Jupyter Notebooks using Reflection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="35_generating_guis.html">Generating graphical user interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="40_system_messages.html">Configure bia-bob’s <em>behaviour</em> through system messages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../27_generating_data/synthetic_customer_data_llms.html">Generating synthetic customer data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../27_generating_data/synthetic_customer_data_rnd_generators.html">Combining LLMs with Random number generators for data generation</a></li>
 </ul>
@@ -740,7 +770,7 @@ title="Source repository"
 </a>
 </a>
       
-      <li><a href="https://github.com/ScaDS/LLM_Summer_School_Tutorial_2025/issues/new?title=Issue%20on%20page%20%2F25_code_generation/generate_notebooks_reflection.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ScaDS/LLM_Summer_School_Tutorial_2025/issues/new?title=Issue%20on%20page%20%2F25_code_generation/20_long_context_prompting.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -765,7 +795,7 @@ title="Open an issue"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      <li><a href="../_sources/25_code_generation/generate_notebooks_reflection.ipynb" target="_blank"
+      <li><a href="../_sources/25_code_generation/20_long_context_prompting.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -808,7 +838,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Generating Jupyter Notebooks using Reflection</h1>
+    <h1>Long-context prompting</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -819,22 +849,7 @@ title="Print to PDF"
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#initial-prompting-step">
-   Initial prompting step
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reflection-step">
-   Reflection step
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
    Exercise
   </a>
  </li>
@@ -847,118 +862,141 @@ title="Print to PDF"
 
             <article class="bd-article" role="main">
               
-  <section class="tex2jax_ignore mathjax_ignore" id="generating-jupyter-notebooks-using-reflection">
-<h1>Generating Jupyter Notebooks using Reflection<a class="headerlink" href="#generating-jupyter-notebooks-using-reflection" title="Permalink to this heading">#</a></h1>
-<p>Reflection is a way to question the results of an LLM by the same or a different LLM.
-With this additional prompting step, we can correct results the LLM might have gotten wrong in the first step.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="long-context-prompting">
+<h1>Long-context prompting<a class="headerlink" href="#long-context-prompting" title="Permalink to this heading">#</a></h1>
+<p>One can enrich a prompt to an LLM with a knowledge base, e.g. code snippets in the bio-image analysis context. This notebook demonstrates how to use such a knowledge-base for code generation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">openai</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Markdown</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">llm_utilities</span><span class="w"> </span><span class="kn">import</span> <span class="n">prompt_scadsai_llm</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">partial</span>
-
-<span class="c1"># select the prompt function and model</span>
-<span class="n">prompt</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">prompt_scadsai_llm</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">llm_utilities</span><span class="w"> </span><span class="kn">import</span> <span class="n">prompt_scadsai_llm</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="initial-prompting-step">
-<h2>Initial prompting step<a class="headerlink" href="#initial-prompting-step" title="Permalink to this heading">#</a></h2>
-<p>First, we prompt an LLM as usual. Our example task asks for generating a trivial Jupyter notebook.
-Jupyter notebooks are files in json format.</p>
+<p>First we define a knowledge base. This <em>document</em> is use-case-agnositic. We will use the same knowledge base independent from the task we’re trying to solve.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_notebook</span> <span class="o">=</span> <span class="n">prompt</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">Write Python code for demonstrating plotting using seaborn with 10 plots.</span>
-<span class="s2">Output it as Jupyter notebook in ipynb/json format. </span>
-<span class="s2">Add explanationory cells in betweeen the code cells.</span>
-<span class="s2">The notebook should contain explanation of how to call the function.</span>
-<span class="s2">Make sure there are line breaks after each code line.</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;```json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;```&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">knowledge_base</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;## Code snippets</span>
 
-<span class="n">first_file</span> <span class="o">=</span> <span class="s2">&quot;generated_notebook.ipynb&quot;</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">first_file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">first_notebook</span><span class="p">)</span>
-    
-<span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Open notebook](</span><span class="si">{</span><span class="n">first_file</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="s2">You typically assemble code snippets when working with Python. The following snippets are given:</span>
+
+<span class="s2">* When asked to segment nuclei, use the cellpose library like this:</span>
+
+<span class="s2">```python</span>
+<span class="s2">from cellpose import models</span>
+
+<span class="s2">model = models.CellposeModel(gpu=False)</span>
+<span class="s2">masks, flows, styles = model.eval(image, </span>
+<span class="s2">                                  batch_size=32, </span>
+<span class="s2">                                  flow_threshold=0.4, </span>
+<span class="s2">                                  cellprob_threshold=0.0,</span>
+<span class="s2">                                  normalize={&quot;tile_norm_blocksize&quot;: 0})</span>
+<span class="s2">label_image = masks.astype(np.uint32)</span>
+<span class="s2">```</span>
+
+<span class="s2">* When asked to segment anything else but nuclei, use otsu-thresholding:</span>
+
+<span class="s2">```python</span>
+<span class="s2">from skimage.measure import label</span>
+<span class="s2">from skimage.filters import threshold_otsu</span>
+
+<span class="s2"># process the image</span>
+<span class="s2">labeled = label(image &gt; threshold_otsu(image))</span>
+<span class="s2">```</span>
+
+<span class="s2">*When asked to open an image, use this code:</span>
+
+<span class="s2">```python</span>
+<span class="s2">from skimage.io import imread, imsave</span>
+
+<span class="s2">image = imread(&#39;image.tif&#39;)</span>
+<span class="s2">```</span>
+
+<span class="s2">* When asekd to visualize images, use this code at the very end of the code:</span>
+
+<span class="s2">```python</span>
+<span class="s2">import stackview</span>
+<span class="s2">stackview.insight(image)</span>
+<span class="s2">```</span>
+
+<span class="s2">When writing code make sure the code is executable, </span>
+<span class="s2">e.g. make sure import statements are there and variables are named consistently.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we formulate the specific task at hand. In this example, we aim to develop a simple image processing workflow.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Please write code that does this</span>
+<span class="s2">* loads blobs.tif, </span>
+<span class="s2">* segment roundish objects in the image and </span>
+<span class="s2">* visualize the result &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, the prompt is assembled from the generic knowledge base and the specific task.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;You are an excellent bio-image analyst and python programmer.</span>
+
+<span class="s2">Your task is to write code in Jupyter Notebook cells. </span>
+<span class="s2">Always write one piece of code that goes into a Jupyter cell.</span>
+
+<span class="si">{</span><span class="n">knowledge_base</span><span class="si">}</span>
+
+<span class="s2">## Your task:</span>
+
+<span class="si">{</span><span class="n">task</span><span class="si">}</span>
+
+<span class="s2">## Final hints</span>
+<span class="s2">Make sure there are comments between the code blocks.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The prompt can then be sent to the LLM service provider to generate code for our task.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">code</span> <span class="o">=</span> <span class="n">prompt_scadsai_llm</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+
+<span class="c1"># clean output</span>
+<span class="n">code</span> <span class="o">=</span> <span class="n">code</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;```python&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;```&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<p><a class="reference external" href="generated_notebook.ipynb">Open notebook</a></p>
-</div>
-</div>
-<p>This function can be used to test if the response is valid json.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_valid_json</span><span class="p">(</span><span class="n">test_string</span><span class="p">):</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">test_string</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">True</span>
-    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># Import necessary libraries
+from skimage.io import imread, imsave
+import numpy as np
+from skimage.measure import label
+from skimage.filters import threshold_otsu
 
-<span class="n">is_valid_json</span><span class="p">(</span><span class="n">first_notebook</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="reflection-step">
-<h2>Reflection step<a class="headerlink" href="#reflection-step" title="Permalink to this heading">#</a></h2>
-<p>We now take the output of the first prompt and modify it to make sure it is a Jupyter notebook file.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">second_notebook</span> <span class="o">=</span> <span class="n">prompt</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">Take the following text and extract the Jupyter </span>
-<span class="s2">notebook ipynb/json from it:</span>
+# Load the image
+image = imread(&#39;blobs.tif&#39;)
+```
 
-<span class="si">{</span><span class="n">first_notebook</span><span class="si">}</span>
+```python
+# Segment roundish objects in the image using otsu-thresholding
+labeled = label(image &gt; threshold_otsu(image))
+```
 
-<span class="s2">Make sure the output is in ipynb/json format only. No markdown fences please.</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;```json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;```&quot;</span><span class="p">)</span>
-
-<span class="n">second_file</span> <span class="o">=</span> <span class="s2">&quot;modified_notebook.ipynb&quot;</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">second_file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">second_notebook</span><span class="p">)</span>
-    
-<span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Open notebook](</span><span class="si">{</span><span class="n">second_file</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<p><a class="reference external" href="modified_notebook.ipynb">Open notebook</a></p>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_valid_json</span><span class="p">(</span><span class="n">second_notebook</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+```python
+# Visualize the result
+import stackview
+stackview.insight(labeled)
 </pre></div>
 </div>
 </div>
 </div>
-</section>
 <section id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
-<p>Ask the LLM to produce a more complex example notebook. Try to find the limits of this approach.</p>
-</section>
-<section id="id1">
-<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<p>Try different models such as meta-llama/Llama-3.3-70B-Instruct and mistral-7b-q4.</p>
+<p>Extend the knowledge base above with more code snippets, e.g. feature extraction and plotting.
+Prompt for an advanced image processing workflow going from a raw image to a plot of extracted features.</p>
 </section>
 </section>
 
@@ -990,17 +1028,17 @@ Jupyter notebooks are files in json format.</p>
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="generating_guis.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="10_extending_jupyter_notebooks.html" title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Generating graphical user interfaces</p>
+          <p class="prev-next-title">Extending Jupyter Notebooks</p>
       </div>
   </a>
-  <a class='right-next' id="next-link" href="../27_generating_data/synthetic_customer_data_llms.html" title="next page">
+  <a class='right-next' id="next-link" href="30_bia-bob_demo.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Generating synthetic customer data</p>
+      <p class="prev-next-title">Generating code using bia-bob</p>
   </div>
   <i class="fa-solid fa-angle-right"></i>
   </a>
@@ -1021,22 +1059,7 @@ Jupyter notebooks are files in json format.</p>
 <nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#initial-prompting-step">
-   Initial prompting step
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reflection-step">
-   Reflection step
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
    Exercise
   </a>
  </li>
