@@ -34,6 +34,13 @@ parts:
     - file: 27_generating_data/synthetic_customer_data_llms.ipynb
     - file: 27_generating_data/synthetic_customer_data_rnd_generators.ipynb
 
+  - caption: Vision Language Models
+    chapters:
+    - file: 40_vision/22_vision_scads_llm.ipynb
+    - file: 40_vision/20_vision_ollama.ipynb
+    - file: 40_vision/23_vision_bb_segmentation.ipynb
+    - file: 40_vision/30_vision_models_structred_output.ipynb
+
   - caption: Retrieval Augmented Generation (RAG)
     chapters:
     - file: 33_chat_with_docs/text-embeddings.ipynb
