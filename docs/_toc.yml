@@ -19,9 +19,7 @@ parts:
     - file: 15_endpoint_apis/05_github_models_endpoints.ipynb
     - file: 15_endpoint_apis/07_openrouter_endpoint.ipynb
 
-    - file: 20_chatbots/readme.md
-      sections:
-      - file: 20_chatbots/gui.ipynb
+    - file: 20_chatbots/gui.ipynb
 
   - caption: Generating Code and Data
     chapters:
