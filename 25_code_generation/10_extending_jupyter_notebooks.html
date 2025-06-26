@@ -994,6 +994,18 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="jupyter-magics">
 <h2>Jupyter Magics<a class="headerlink" href="#jupyter-magics" title="Permalink to this heading">#</a></h2>
@@ -1007,6 +1019,10 @@ title="Print to PDF"
 <span class="k">def</span><span class="w"> </span><span class="nf">alice</span><span class="p">(</span><span class="n">line</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cell</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
     <span class="c1"># ask LLM to write code</span>
     <span class="n">code</span> <span class="o">=</span> <span class="n">prompt_scadsai_llm</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;Please write Python code which does this: </span>
+<span class="s2"> ----------------------------------------------</span>
+<span class="s2">| YOU CAN ENTER DOMAIN SPECIFIC KNOWLEDGE HERE |</span>
+<span class="s2"> ----------------------------------------------</span>
+
 <span class="si">{</span><span class="n">line</span><span class="si">}</span>
 <span class="si">{</span><span class="n">cell</span><span class="si">}</span>
 
@@ -1034,16 +1050,27 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello world!
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
 <p>Create an image processing workflow by writing english prompts only. Try to not edit code manually.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">alice</span> please write a python function that can 
-segment bright objects in an image and return a label image. 
-Use scikit-image and numpy preferably.
-Keep the code short and concise.
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">alice</span> 
+please write very short python code for plotting a 
+sigmoid function
 </pre></div>
 </div>
 </div>
@@ -1051,24 +1078,18 @@ Keep the code short and concise.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">skimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">io</span><span class="p">,</span> <span class="n">filters</span><span class="p">,</span> <span class="n">morphology</span><span class="p">,</span> <span class="n">measure</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">segment_bright_objects</span><span class="p">(</span><span class="n">image_path</span><span class="p">):</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">as_gray</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">threshold</span> <span class="o">=</span> <span class="n">filters</span><span class="o">.</span><span class="n">threshold_otsu</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-    <span class="n">binary</span> <span class="o">=</span> <span class="n">image</span> <span class="o">&gt;</span> <span class="n">threshold</span>
-    <span class="n">labeled</span> <span class="o">=</span> <span class="n">measure</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">binary</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">labeled</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-    <span class="n">image_path</span> <span class="o">=</span> <span class="s1">&#39;path_to_your_image.jpg&#39;</span>
-    <span class="n">label_image</span> <span class="o">=</span> <span class="n">segment_bright_objects</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
-    <span class="n">io</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="s1">&#39;label_image.png&#39;</span><span class="p">,</span> <span class="n">label_image</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7f7939ab572a6d1908839e14926d091c97c11c2a9d8df7eda48db69d8d4eefc5.png" src="../_images/7f7939ab572a6d1908839e14926d091c97c11c2a9d8df7eda48db69d8d4eefc5.png" />
 </div>
 </div>
 </section>
