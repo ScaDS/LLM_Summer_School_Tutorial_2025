@@ -48,6 +48,42 @@ def extract_json(text:str):
     return re.findall(pattern, text, re.DOTALL)[0]
 
 
+def prompt_kisski(prompt:str, image, model="qwen2.5-vl-72b-instruct"):
+    """A prompt helper function that sends a message to the server
+    and returns only the text response.
+    """
+    import base64
+    import openai
+    import os
+    from stackview._image_widget import _img_to_rgb
+    rgb_image = _img_to_rgb(image)
+    byte_stream = numpy_to_bytestream(rgb_image)
+    base64_image = base64.b64encode(byte_stream).decode('utf-8')
+
+    message = [{"role": "user", "content": [
+        {"type": "text", "text": prompt},
+        {
+        "type": "image_url",
+        "image_url": {
+            "url": f"data:image/png;base64,{base64_image}"
+        }
+    }]}]
+            
+    # setup connection to the LLM
+    client = openai.OpenAI(base_url="https://chat-ai.academiccloud.de/v1",
+                           api_key=os.environ.get('KISSKI_API_KEY'))
+    
+    # submit prompt
+    response = client.chat.completions.create(
+        model=model,
+        messages=message
+    )
+    
+    # extract answer
+    return response.choices[0].message.content
+
+
+
 def prompt_scads_llm(prompt:str, image, model="Qwen/Qwen2-VL-7B-Instruct"):
     """A prompt helper function that sends a message to the server
     and returns only the text response.
@@ -81,6 +117,7 @@ def prompt_scads_llm(prompt:str, image, model="Qwen/Qwen2-VL-7B-Instruct"):
     
     # extract answer
     return response.choices[0].message.content
+
 
 
 def prompt_ollama(prompt:str, image, model="gemma3:4b"):
