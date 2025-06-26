@@ -11,8 +11,8 @@ To edit this book, install depencencies like this:
 ```
 pip install jupyterlab jupyter-book jupyterlab-spellchecker
 
-git clone https://github.com/scads/generative-ai-notebooks
-cd  generative-ai-notebooks
+git clone https://github.com/ScaDS/LLM_Summer_School_Tutorial_2025
+cd LLM_Summer_School_Tutorial_2025
 jupyter lab
 ```
 
