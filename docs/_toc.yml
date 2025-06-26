@@ -57,7 +57,7 @@ parts:
 
   - caption: Links
     chapters:
-    - url: https://zenodo.org/records/15006767
+    - url: https://doi.org/10.5281/zenodo.15743126
       title: Download Slides
     - url: https://creativecommons.org/licenses/by/4.0/
       title: License CC-BY 4.0
