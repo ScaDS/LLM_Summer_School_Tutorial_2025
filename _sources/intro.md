@@ -1,7 +1,7 @@
 # ScaDS.AI Summer School LLM Training
 
-This is a collection of Jupyter Notebooks about basic and advanced LLM usage, focusing on what's possible with Large Language Models. We demonstrate most utilities using the [ScaDS.AI Large Language Models (LLM) Servicer](https://llm.scads.ai) ([TU Dresden VPN](https://tu-dresden.de/zih/dienste/service-katalog/arbeitsumgebung/zugang_datennetz/vpn) required). Most exercises should also work with other providers such as [GWDG KISSKI](https://kisski.gwdg.de/leistungen/2-02-llm-service/) and [Helmholtz Blablador](https://login.helmholtz.de/oauth2-as/oauth2-authz-web-ui). 
-The tutorial aims at Python programmers who want to dive into LLMs for generating text, code and data using open source/weights models.
+This is a collection of Jupyter Notebooks about basic and advanced LLM usage, focusing on what's practicslly possible with Large Language Models. We demonstrate most utilities using the [ScaDS.AI Large Language Models (LLM) Servicer](https://llm.scads.ai) ([TU Dresden VPN](https://tu-dresden.de/zih/dienste/service-katalog/arbeitsumgebung/zugang_datennetz/vpn) required). Most exercises should also work with other providers such as [GWDG KISSKI](https://kisski.gwdg.de/leistungen/2-02-llm-service/) and [Helmholtz Blablador](https://login.helmholtz.de/oauth2-as/oauth2-authz-web-ui). 
+The tutorial aims at Python programmers who want to dive into LLMs for generating text, code and data using open source/weights models. After this course they will be able to integrate LLMs into their software applications.
 
 Contributions and feedback are very welcome! In case you see room for improvement, please [create a github issue](https://github.com/ScaDS/LLM_Summer_School_Tutorial_2025/issues) and/or consider [contributing](https://github.com/ScaDS/LLM_Summer_School_Tutorial_2025/blob/main/CONTRIBUTING.md).
 
@@ -12,23 +12,18 @@ The notebook collection aims covering these topics:
 * Text/Code/Data generation
 * Prompt Engineering
 * Retrieval-augmented-generation
+* Vision
 * Function calling
 * Agents
 
 ## Covered Python libraries and software
 
-In these notebooks we use non-standard libraries from the GenAI field. Installation instructions can be found either in the first chapter or in the readme of the respective subchapter.
+In these notebooks we use libraries from the GenAI field:
 
 * [bia-bob](https://github.com/haesleinhuepf/bia-bob)
 * [llama-index](https://www.llamaindex.ai/)
 * [ollama](https://ollama.com/)
 * [openai](https://github.com/openai/openai-python)
-
-## Covered models
-
-We will explore how these models work
-* [meta-llama/Llama-3.3-70B-Instruct](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct)
-* [DeepSeek-Coder-V2-Lite](https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct)
 
 ### Videos
 
