@@ -25,6 +25,11 @@ In these notebooks we use libraries from the GenAI field:
 * [ollama](https://ollama.com/)
 * [openai](https://github.com/openai/openai-python)
 
+### Slide decks
+
+Also training slides can be downloaded from zenodo:  [https://doi.org/10.5281/zenodo.15743126](https://doi.org/10.5281/zenodo.15743126)
+
+
 ### Videos
 
 The materials provided here were also discussed in a couple of recorded Online Lectures
@@ -32,10 +37,6 @@ The materials provided here were also discussed in a couple of recorded Online L
 * [Large Language Models – an introduction for life scientists (GloBIAS Seminar 2024)](https://www.youtube.com/watch?v=VbD_zS5GOSc)
 * [Bio-image Analysis Code Generation (I2K Conference 2024)](https://www.youtube.com/watch?v=sBcV8rasOWo)
 * [Generative Artificial Intelligence for Bio-image Analysis](https://www.youtube.com/watch?v=nC0REzvOT5s)
-
-### Slide decks
-
-Also training slides can be downloaded [here](https://doi.org/10.5281/zenodo.15743126.
 
 ### Related resources
 
